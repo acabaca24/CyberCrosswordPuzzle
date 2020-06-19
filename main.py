@@ -1,8 +1,8 @@
 tamanhoDaGrid = 14 # x * y of the grid
-words =[]
-grid = [[' '] * tamanhoDaGrid for _ in range(tamanhoDaGrid)]
+words =[] # list of words to write on grid
+grid = [[' '] * tamanhoDaGrid for _ in range(tamanhoDaGrid)] # actual grid
 
-class Word:
+class Word: # class with all the atributes of a word
 	def __init__(self, word, number, clue, posX, posY, isDown, isNumberLabelOnLeft):
 		self.word = word # a palavra em si
 		self.number = number # numero da palavra, apenas utilizado para as clues
