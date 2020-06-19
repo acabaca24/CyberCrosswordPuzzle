@@ -15,21 +15,23 @@ class Word:
 		self.PutWordInGrid()
 
 	def PutWordInGrid(self):
-		posX = self.posX
-		posY = self.posY
+		auxPosX = self.posX # X position to write on grid
+		auxPosY = self.posY # Y position to write on grid
 		if(self.isNumberLabelOnLeft): #words that label will be on the left
-			grid[self.posX - 1][self.posY] = self.number
+			grid[auxPosX - 1][auxPosY] = self.number
 		else: 					 # The rest, the label will be on the top
-			grid[self.posX][self.posY - 1] = self.number
+			grid[auxPosX][auxPosY - 1] = self.number
+		
 		for k in self.word:
 			if(self.isRevealed):
-				grid[posX][posY] = k
+				grid[auxPosX][auxPosY] = k # placing letter on cell of the grid
 			else:
-				grid[posX][posY] = '_'
+				grid[auxPosX][auxPosY] = '_' # placing '_' on cell of the grid
+			
 			if self.isDown:
-				posY += 1
+				auxPosY += 1 # Change location to 1 position downwards
 			else:
-				posX += 1
+				auxPosX += 1 # Change location to 1 position to the right
 
 def PrintGrid():
 	for y in range(0,13):
