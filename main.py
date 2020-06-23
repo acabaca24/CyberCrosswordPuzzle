@@ -34,7 +34,7 @@ class Word: # class with all the atributes of a word
 				auxPosX += 1 # Change location to 1 position to the right
 
 def PrintGrid():
-	for y in range(0,13):
+	for y in range(0,14):
 		for x in range(0,13):
 			print(" " + grid[x][y], end = " ")
 		print()
